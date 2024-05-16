@@ -1,13 +1,37 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: whitesmoke; */
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  --background-color: whitesmoke;
+  --font-color: black;
+  --list-color: #333;
+  --card-background-color: white;
+  --card-border: darkgray;
+}
+[data-theme="dark"]{
+  --background-color: black;
+  --font-color: white;
+  --list-color: #fff;
+  --card-background-color: #222;
+  --card-border: #333;
+}
+body{
+  /* font-family: "Poppins", sans-serif;
+    font-size: 18px; */
+    
+}
+.App{
+  color: var(--font-color);
+}
+.darkMode{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 16px;
+  font-weight: 500;
 }

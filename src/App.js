@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import DashBoard from "./pages/dashboard/DashBoard";
+import Workflows from "./pages/workflows/Workflows";
+import LoginPage from "./pages/loginPage/LoginPage";
+import { useState } from "react";
+
 
 function App() {
+  const [isDark, setIsDark] = useState(false);
+
+  const handletheme = () => {
+      setIsDark(!isDark)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" data-theme={isDark ? "dark" : 'light'}>
+      <div className="darkMode">
+        <form action="" >
+          <input type="checkBox" onClick={handletheme}/>
+          <label htmlFor="">Dark Mode</label>
+        </form>
+      </div>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/workflow" element={<Workflows />} />
+      </Routes>
     </div>
   );
 }
